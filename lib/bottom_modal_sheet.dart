@@ -20,7 +20,30 @@ class _BottomModalSheetDemoState extends State<BottomModalSheetDemo> {
               barrierColor: Colors.green,
               elevation: 10,
               backgroundColor: Colors.yellow,
-              Container(),
+              Column(
+                children: [
+                  ListTile(
+                    title: const Text('Light Theme'),
+                    onTap: () {
+                      Get.changeTheme(
+                        ThemeData(
+                          brightness: Brightness.light,
+                        ),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Dark Theme'),
+                    onTap: () {
+                      Get.changeTheme(
+                        ThemeData(
+                          brightness: Brightness.dark,
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
             );
           },
           child: const Text('Show Modal Bottom Sheet'),
