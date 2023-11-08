@@ -25,6 +25,7 @@ class _NamedRouteDemoState extends State<NamedRouteDemo> {
             );
             log(Get.arguments[0]);
             log(Get.parameters['name']!);
+            
           },
           child: const Text('Go to Named Route'),
         ),
