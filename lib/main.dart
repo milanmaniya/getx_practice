@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:getx_practice/controller_class.dart';
-import 'package:getx_practice/getxController/ui.dart';
+import 'package:getx_practice/language_change.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
       // getPages: [
       //   GetPage(
-      //     name: '/named',
+      //     name: '/named', 
       //     page: () => const NamedRouteDemo(),
       //   ),
       //   GetPage(
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const Ui(),
+      home: const LanguageChange(),
     );
   }
 }
