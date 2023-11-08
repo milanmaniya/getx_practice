@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:getx_practice/show_dialog.dart';
+import 'package:getx_practice/bottom_modal_sheet.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const ShowDialogMessage(),
+      home: const BottomModalSheetDemo(),
     );
   }
 }

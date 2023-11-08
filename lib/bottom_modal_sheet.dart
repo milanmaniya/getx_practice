@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BottomModalSheetDemo extends StatefulWidget {
   const BottomModalSheetDemo({super.key});
@@ -13,7 +14,15 @@ class _BottomModalSheetDemoState extends State<BottomModalSheetDemo> {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.bottomSheet(
+              isDismissible: true,
+              barrierColor: Colors.green,
+              elevation: 10,
+              backgroundColor: Colors.yellow,
+              Container(),
+            );
+          },
           child: const Text('Show Modal Bottom Sheet'),
         ),
       ),
