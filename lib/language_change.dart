@@ -16,6 +16,17 @@ class _LanguageChangeState extends State<LanguageChange> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Text(
+              'milan',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
             ElevatedButton(
               onPressed: () {},
               child: const Text('Hindi'),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:getx_practice/controller_class.dart';
+import 'package:getx_practice/injection.dart';
 import 'package:getx_practice/language_change.dart';
 
 void main() {
