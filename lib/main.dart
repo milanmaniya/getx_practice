@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:getx_practice/injection.dart';
+import 'package:getx_practice/getx_binding.dart';
 import 'package:getx_practice/language_change.dart';
 
 void main() {
@@ -13,14 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AllController().controller;
+    // AllController().controller;
 
     return GetMaterialApp(
+      initialBinding: GetxBinding(),
+      title: 'binding',
+
       // initialRoute: '/named',
 
       // getPages: [
       //   GetPage(
-      //     name: '/named', 
+      //     name: '/named',
       //     page: () => const NamedRouteDemo(),
       //   ),
       //   GetPage(
@@ -33,6 +36,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
+
       home: const LanguageChange(),
     );
   }
