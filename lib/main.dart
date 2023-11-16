@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:getx_practice/gettorage_EmailValidation.dart';
 import 'package:getx_practice/getx_binding.dart';
-import 'package:getx_practice/language_change.dart';
 
-void main() {
+Future<void> main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -20,7 +22,6 @@ class MyApp extends StatelessWidget {
       title: 'binding',
 
       // initialRoute: '/named',
-
       // getPages: [
       //   GetPage(
       //     name: '/named',
@@ -29,7 +30,6 @@ class MyApp extends StatelessWidget {
       //   GetPage(
       //     name: '/bottomsheet',
       //     page: () => const BottomModalSheetDemo(),
-
       //   ),
       // ],
       debugShowCheckedModeBanner: false,
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home: const LanguageChange(),
+      home: const GetStorageEmailValidation(),
     );
   }
 }
