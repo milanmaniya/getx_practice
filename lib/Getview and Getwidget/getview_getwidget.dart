@@ -28,6 +28,7 @@ class GetViewAndGetWidgetState extends GetView<GetViewAndGetWidgetController> {
             const SizedBox(
               height: 30,
             ),
+            
             ElevatedButton(
               onPressed: () {
                 con.increment();
