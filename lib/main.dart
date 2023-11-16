@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:getx_practice/gettorage_EmailValidation.dart';
+import 'package:getx_practice/Getview%20and%20Getwidget/getview_getwidget.dart';
 import 'package:getx_practice/getx_binding.dart';
+import 'package:getx_practice/injection.dart';
 
 Future<void> main() async {
   await GetStorage.init();
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // AllController().controller;
+    AllController().controller;
 
     return GetMaterialApp(
       initialBinding: GetxBinding(),
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home: const GetStorageEmailValidation(),
+      home: const GetViewAndGetWidgetState(),
     );
   }
 }
