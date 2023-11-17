@@ -7,6 +7,7 @@ class GetViewAndGetWidgetState extends GetView<GetViewAndGetWidgetController> {
 
   @override
   Widget build(BuildContext context) {
+    
     var con = Get.find<GetViewAndGetWidgetController>();
 
     return Scaffold(
