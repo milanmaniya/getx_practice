@@ -17,18 +17,22 @@ class _NetworkUiState extends State<NetworkUi> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => Text(
-            controller.connectionStatus.value == 1
-                ? 'Network is Wifi'
-                : (controller.connectionStatus.value == 2
-                    ? 'Network is mobile'
-                    : 'None'),
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          () => controller.isNetwork.value == false
+              ? Text(
+                  controller.connectionStatus.value == 1
+                      ? 'Network is Wifi'
+                      : (controller.connectionStatus.value == 2
+                          ? 'Network is mobile'
+                          : 'None'),
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              : const Center(
+                  child: CircularProgressIndicator(),
+                ),
         ),
       ),
     );

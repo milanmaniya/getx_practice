@@ -8,6 +8,8 @@ class NetworkController extends GetxController {
   var connectionStatus = 0.obs;
   final Connectivity _connectivity = Connectivity();
 
+  final isNetwork = false.obs;
+
   late StreamSubscription<ConnectivityResult> connectionSubsciption;
 
   @override
@@ -37,14 +39,18 @@ class NetworkController extends GetxController {
   _updateConnectionStatus(ConnectivityResult result) {
     switch (result) {
       case ConnectivityResult.wifi:
+        isNetwork.value = false;
         connectionStatus.value = 1;
         break;
 
       case ConnectivityResult.mobile:
+        isNetwork.value = false;
         connectionStatus.value = 2;
         break;
       case ConnectivityResult.none:
+        isNetwork.value = true;
         connectionStatus.value = 3;
+
         break;
       default:
         Get.snackbar('Network error', 'failed to get network');
