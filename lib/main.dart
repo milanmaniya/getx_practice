@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:getx_practice/Getview%20and%20Getwidget/getview_getwidget.dart';
-import 'package:getx_practice/getx_binding.dart';
+import 'package:getx_practice/Network_Connectivity/binding/network_binding.dart';
+import 'package:getx_practice/Network_Connectivity/ui.dart';
 import 'package:getx_practice/injection.dart';
 
 Future<void> main() async {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     AllController().controller;
 
     return GetMaterialApp(
-      initialBinding: GetxBinding(),
+      initialBinding: NetworkBinding(),
       title: 'binding',
 
       // initialRoute: '/named',
@@ -33,12 +33,13 @@ class MyApp extends StatelessWidget {
       //     page: () => const BottomModalSheetDemo(),
       //   ),
       // ],
+
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
       ),
 
-      home: const GetViewAndGetWidgetState(),
+      home: const NetworkUi(),
     );
   }
 }
