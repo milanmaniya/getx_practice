@@ -17,57 +17,64 @@ class _ImagePickerState extends State<ImagePicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 20,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Obx(
-                () => instance.selectedImagePath.value == ''
-                    ? const Text(
-                        'Select image from camera/ gallery',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 20,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Obx(
+                  () => instance.selectedImagePath.value == ''
+                      ? const Text(
+                          'Select image from camera / gallery',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      : Image.file(
+                          File(instance.selectedImagePath.value),
                         ),
-                      )
-                    : Image.file(
-                        File(instance.selectedImagePath.value),
-                      ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Obx(
-                () => Text(
-                  instance.selectedImageSize.value == ''
-                      ? ''
-                      : 'Size: ${instance.selectedImageSize.value}',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Obx(
+                  () => Text(
+                    instance.selectedImageSize.value == ''
+                        ? ''
+                        : 'Size: ${instance.selectedImageSize.value}',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                onPressed: () => instance.getImage(ImageSource.camera),
-                child: const Text('Pick Image for camera'),
-              ),
-              ElevatedButton(
-                onPressed: () => instance.getImage(ImageSource.gallery),
-                child: const Text('Pick Image for gallery'),
-              ),
-            ],
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                  onPressed: () => instance.getImage(ImageSource.camera),
+                  child: const Text('Pick Image for camera'),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                  onPressed: () => instance.getImage(ImageSource.gallery),
+                  child: const Text('Pick Image for gallery'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
