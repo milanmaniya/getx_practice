@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:getx_practice/Network_Connectivity/binding/network_binding.dart';
-import 'package:getx_practice/image_picker/image_picker.dart';
+import 'package:getx_practice/argument/argument.dart';
 import 'package:getx_practice/injection.dart';
 
 Future<void> main() async {
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home: const ImagePicker(),
+      home: const ArgumentScreen(),
     );
   }
 }
